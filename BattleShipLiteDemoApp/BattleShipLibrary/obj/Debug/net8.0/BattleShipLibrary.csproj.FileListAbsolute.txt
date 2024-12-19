@@ -1,0 +1,11 @@
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\bin\Debug\net8.0\BattleShipLibrary.deps.json
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\bin\Debug\net8.0\BattleShipLibrary.dll
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\bin\Debug\net8.0\BattleShipLibrary.pdb
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\BattleShipLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\BattleShipLibrary.AssemblyInfoInputs.cache
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\BattleShipLibrary.AssemblyInfo.cs
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\BattleShipLibrary.csproj.CoreCompileInputs.cache
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\BattleShipLibrary.dll
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\refint\BattleShipLibrary.dll
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\BattleShipLibrary.pdb
+C:\Users\davyd\source\repos\BattleShipLiteDemoApp\BattleShipLibrary\obj\Debug\net8.0\ref\BattleShipLibrary.dll
