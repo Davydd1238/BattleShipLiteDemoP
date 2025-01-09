@@ -24,19 +24,19 @@ namespace BattleShipLiteDemo.Methods
                 }
                 if (gridSpot.Status == GridSpotStatus.Empty)
                 {
-                    Console.Write($"{gridSpot.SpotLetter}{gridSpot.SpotNumber}");
+                    Console.Write($" { gridSpot.SpotLetter }{ gridSpot.SpotNumber } ");
                 }
                 else if (gridSpot.Status == GridSpotStatus.Hit)
                 {
-                    Console.Write("X");
+                    Console.Write("X ");
                 }
                 else if (gridSpot.Status == GridSpotStatus.Miss)
                 {
-                    Console.Write("O");
+                    Console.Write("O ");
                 }
                 else if (gridSpot.Status == GridSpotStatus.Sunk)
                 {
-                    Console.Write("S");
+                    Console.Write("S ");
                 }
                 else
                 {
@@ -54,9 +54,18 @@ namespace BattleShipLiteDemo.Methods
         {
                 string shot = GridLogic.AskForShot($"{activePlayer.PlayerName}");
 
-                (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
+                try
+                {
+                    (row, column) = GameLogic.SplitShotIntoRowAndColumn(shot);
 
-                isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+                    isValidShot = GameLogic.ValidateShot(activePlayer, row, column);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                    isValidShot =false;
+                }
 
                 if (isValidShot == false)
                 {
@@ -67,7 +76,9 @@ namespace BattleShipLiteDemo.Methods
             bool isAHit = GameLogic.IdentifyShotResult(opponent, row, column);
             
             GameLogic.MarkShotResult(activePlayer, row, column, isAHit);
+            GameLogic.DisplayShotResult(isAHit);
     }
+
         private static string AskForShot(string playerTitle)
         {
             Console.WriteLine();

@@ -17,7 +17,7 @@ do
    
     GridLogic.RecordPlayerShot(activePlayer, opponent);
 
-    bool doesGameContinue = GameLogic.PlayerStillActive(activePlayer);
+    bool doesGameContinue = GameLogic.PlayerStillActive(opponent);
 
     if (doesGameContinue)
     {

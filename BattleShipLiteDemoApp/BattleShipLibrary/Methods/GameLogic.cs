@@ -33,7 +33,7 @@ namespace BattleShipLibrary.Methods
                 2,
                 3,
                 4,
-                5
+                5 
             };
             foreach (string letter in letters)
             {
@@ -64,21 +64,20 @@ namespace BattleShipLibrary.Methods
                 if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column)
                 {
                     isAHit = true;
+                    ship.Status = GridSpotStatus.Sunk;
                 }
             }
             return isAHit;
         }
         public static void MarkShotResult(PlayerModel player, string row, int column, bool isAHit)
         {
-            bool isValidLocation = true;
-
             foreach (var gridSpot in player.ShotGrid)
             {
                 if (gridSpot.SpotLetter == row.ToUpper() && gridSpot.SpotNumber == column)
                 {
                     if (isAHit)
                     {
-                        gridSpot.Status = GridSpotStatus.Sunk;
+                        gridSpot.Status = GridSpotStatus.Hit;
                     }
                     else
                     {
@@ -134,13 +133,13 @@ namespace BattleShipLibrary.Methods
         }
         public static bool PlayerStillActive(PlayerModel player)
         {
-            bool isActive = true;
+            bool isActive = false;
 
-            foreach (var ship in player.ShipLocations)   //This doesn't work I need it to capture when all ships are sunk
+            foreach (var ship in player.ShipLocations)
             {
-                if (ship.Status == GridSpotStatus.Sunk)
+                if (ship.Status != GridSpotStatus.Sunk)
                 {
-                    isActive = false;
+                    isActive = true;
                 }
             }
             return isActive;
@@ -190,5 +189,20 @@ namespace BattleShipLibrary.Methods
             model.ShotGrid.Add(spot);
         }
 
+        public static void DisplayShotResult(bool isAHit)
+        {
+            if (isAHit == true)
+            {
+                Console.WriteLine();
+                Console.WriteLine("BOOM!(Hit)");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Splash! Dang better luck next time.(Miss)");
+                Console.WriteLine();
+            }
+        }
     }
 }

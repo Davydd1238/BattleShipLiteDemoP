@@ -54,7 +54,17 @@ namespace BattleShipLiteDemo.Methods
                 Console.Write($"Where do you want to place ship number {model.ShipLocations.Count + 1}: ");
                 string location = Console.ReadLine();
 
-                bool isValidLocation = GameLogic.PlaceShip(model, location);
+                bool isValidLocation = false;
+
+                try
+                {
+                    isValidLocation = GameLogic.PlaceShip(model, location);
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.Message);
+                }
 
                 if (isValidLocation == false)
                 {
@@ -62,7 +72,6 @@ namespace BattleShipLiteDemo.Methods
                 }
             } while (model.ShipLocations.Count < 5);
         }
-
         public static void IdentifyWinner(PlayerModel winner)
         {
             Console.WriteLine($"Congratulations {winner.PlayerName} for winning");
